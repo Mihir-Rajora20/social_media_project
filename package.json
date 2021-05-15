@@ -1,0 +1,24 @@
+{
+  "name": "social-media-app",
+  "version": "1.0.0",
+  "description": "This is a project that simulates a social media application for posting content and allowing commenting on the content too.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mihir-Rajora20/social_media_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mihir-Rajora20/social_media_project/issues"
+  },
+  "homepage": "https://github.com/Mihir-Rajora20/social_media_project#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
+  }
+}

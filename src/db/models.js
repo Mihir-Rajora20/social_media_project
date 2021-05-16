@@ -1,5 +1,5 @@
 const sequelize= require('sequelize')
-const posts = require('../routes/posts')
+//const posts = require('../routes/posts')
 
 const db= new sequelize(
     {
@@ -26,15 +26,14 @@ const COL_TITLE_DEF= {
 }
 
 // defining the users database
-const Users= db.define('user', 
+const Users= db.define('users', 
 {
     id: COL_ID_DEF, 
     username: COL_USERNAME_DEF
 })
 
 // defining the posts database
-
-const Posts= db.define('post', 
+const Posts= db.define('posts', 
 {
     id: COL_ID_DEF, 
     title: COL_TITLE_DEF, 
@@ -45,7 +44,7 @@ const Posts= db.define('post',
     }
 })
 
-const Comments= db.define('comment',{
+const Comments= db.define('comments',{
     ID: COL_ID_DEF, 
     title: COL_TITLE_DEF, 
     body: {
@@ -63,7 +62,7 @@ Posts.hasMany(Comments)
 Comments.belongsTo(Posts)
 
 
-module.exports= 
+exports=module.exports= 
 {
     db, Users, Posts, Comments
 }

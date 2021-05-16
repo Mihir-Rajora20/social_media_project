@@ -1,15 +1,16 @@
 const {Posts, Users}= require('../db/models')
+// const Posts= require('../db/models').Posts
+// const Users=require('../db/models').Users
 
 
 async function createNewPost(userId, title, body)
 {
-    const post= await Posts.create(
+  console.log("Creating new post")
+   const post=await Posts.create(
         {
-            title, 
-            body,
-            userId
-        }
-    )
+          title, body, userId
+        })
+        
     return post
 }
 
@@ -26,26 +27,13 @@ createNewPost,
 findAllPosts
 }
 
-/*
-async function task() {
+
+/* async function task() {
     console.log(
       await createNewPost(
         1,
-        'This is a sample post',
-        'Body of the post goes here'
-      )
-    ),
-    console.log(
-      await createNewPost(
-        2,
-        'Another sample post',
-        'Some body example here as well'
-      )
-    )
-    const posts = await showAllPosts()
-    for (let p of posts) {
-      console.log(`${p.title}\nauthor: ${p.user.username}\n${p.body}\n==========\n`)
-    }
+        'This is the fourth post',
+        'THis is the fourth body post'))
   }
   
   task()

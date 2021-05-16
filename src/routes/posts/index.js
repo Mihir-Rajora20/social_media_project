@@ -1,7 +1,8 @@
 const {Router}= require('express')
 
-const {
- findAllPosts, createNewPosts}= require('../../controllers/posts');
+// const createNewPost= require('../../controllers/posts').createNewPost
+// const findAllPosts=require('../../controllers/posts').findAllPosts
+const { findAllPosts, createNewPost}= require('../../controllers/posts');
 
 const route= Router()
 
@@ -24,9 +25,10 @@ route.post('/', async (req, res)=>
             }
         )
     }
-    const post= await createNewPosts(userId, title, body)
+    const post= await createNewPost(userId, title, body)
     res.status(201).send(post)
 })
+
 module.exports={
     postsRoute: route
 }
